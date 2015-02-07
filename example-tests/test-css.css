@@ -1,0 +1,43 @@
+#star-example * {
+    background-color: black;
+    color:white
+}
+
+#id-example #awesome {
+    background-color: black;
+    color:white
+}
+
+#class-example .second {
+    background-color: black;
+    color:white
+}
+
+#element-example div {
+    background-color: black;
+    color:white
+}
+
+#combine-example div.magic {
+    background-color: black;
+    color:white
+}
+
+#combine-example .magic.green {
+    background-color: black;
+    color:green;
+}
+
+#decendant-example #first-list li {
+    background-color: black;
+    color: white;
+}
+
+#decendant-example ol li {
+    background-color: orange;
+    color: blue;
+}
+
+p {
+    background-color: inherit;
+}

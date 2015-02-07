@@ -1,0 +1,21 @@
+.code-lines {
+    text-align: left;
+    position: relative;
+}
+
+.code-lines > pre {
+    width: 100%;
+    box-shadow: none;
+    margin: 0px auto;
+}
+
+.highlighted {
+    background-color: #DDDDDD;
+    color: #222222;
+    margin: 0px;
+}
+
+.highlighted.orange-text {
+    background-color: orange;    
+    color: blue;
+}
