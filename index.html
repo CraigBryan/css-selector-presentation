@@ -42,10 +42,9 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
+					<h1>CSS Selectors</h1>
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+						<small>Created with Reveal.js</small>
 					</p>
 				</section>
 
@@ -353,45 +352,318 @@ ol li {
 					</section>
 
 					<section>
-						<div class="code-lines highlighted">
+						<div class="code-lines">
 <pre>&lt;div id="first-list"&gt;
-    &lt;ul&gt;
-        &lt;li&gt;Best&lt;/li&gt;
+    &lt;ul&gt;</pre>
+                        </div>
+                        <div class="code-lines highlighted">
+<pre>        &lt;li&gt;Best&lt;/li&gt;
         &lt;li&gt;Example&lt;/li&gt;
         &lt;li&gt;List&lt;/li&gt;
-        &lt;li&gt;Ever&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/div&gt;</pre>
-						</div>
-						<div class="code-lines">
-<pre>
+        &lt;li&gt;Ever&lt;/li&gt;</pre>
+                        </div>
+                        <div class="code-lines">
+<pre>    &lt;/ul&gt;
+&lt;/div&gt;
 
-</pre>
-						</div>
-						<div class="code-lines highlighted orange-text">
-<pre>&lt;div&gt;
-    &lt;ol&gt;
-        &lt;li&gt;Pretty&lt;/li&gt;
+&lt;div&gt;
+    &lt;ol&gt;</pre>
+                        </div>
+                        <div class="code-lines highlighted orange-text">
+<pre>        &lt;li&gt;Pretty&lt;/li&gt;
         &lt;li&gt;Meh&lt;/li&gt;
         &lt;li&gt;Example&lt;/li&gt;
-        &lt;li&gt;List&lt;/li&gt;
-    &lt;/ol&gt;
-&lt;/div&gt;</pre>
-						</div>
-						<div class="code-lines">
-<pre>
+        &lt;li&gt;List&lt;/li&gt;</pre>
+                        </div>
+                        <div class="code-lines">
+<pre>    &lt;/ol&gt;
+&lt;/div&gt;
 
 &lt;div&gt;
     &lt;ul&gt;
-        &lt;li&gt;Best&lt;/li&gt;
+        &lt;li&gt;More&lt;/li&gt;
         &lt;li&gt;Example&lt;/li&gt;
         &lt;li&gt;List&lt;/li&gt;
-        &lt;li&gt;Ever&lt;/li&gt;
+        &lt;li&gt;For you!&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/div&gt;</pre>
 						</div>
 					</section>
 				</section>
+
+                <section>
+                    <section>
+                        <h2>Direct decendants selector</h2>
+                        <p>Select direct children of X that are Y</p>
+                        <p>Syntax: X > Y</p>
+                    </section>
+                    <section>
+                        <div class="code-lines">
+<pre>&lt;div class="outer-parent"&gt;
+    &lt;div&gt;
+        &lt;p&gt;This will not be selected&lt;/p&gt;
+        &lt;p&gt;Nor will this!&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="outer-parent"&gt;
+    &lt;p&gt;This will be selected!&lt;/p&gt;
+    &lt;p&gt;And this! Wow.&lt;/p&gt;
+&lt;/div&gt;</pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <pre><code>
+.outer-parent > p {
+    background-color: #DDDDDD;
+    color: #222222;
+}
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <div class="code-lines">
+<pre>&lt;div class="outer-parent"&gt;
+    &lt;div&gt;
+        &lt;p&gt;This will not be selected&lt;/p&gt;
+        &lt;p&gt;Nor will this!&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+        
+&lt;div class="outer-parent"&gt;</pre>
+                        </div>
+                        <div class="code-lines highlighted">
+<pre>    &lt;p&gt;This will be selected!&lt;/p&gt;
+    &lt;p&gt;And this! Wow.&lt;/p&gt;</pre>
+                        </div>
+                        <div class="code-lines">
+<pre>&lt;/div&gt;</pre>
+                        </div>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Siblings Selector</h2>
+                        <p>Select later siblings of X that are Y </p>
+                        <p>Syntax: X ~ Y</p>
+                    </section>
+                    <section>
+                        <div class="code-lines">
+<pre>&lt;div id="first-section"&gt;
+    &lt;p&gt;I totally&lt;/p&gt;
+    &lt;p&gt;Stole&lt;/p&gt;
+    &lt;div&gt;
+        &lt;p&gt;this example.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;p&gt;Thanks css-tricks.com&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="second-section"&gt;
+    &lt;p&gt;I totally&lt;/p&gt;
+    &lt;p&gt;Stole&lt;/p&gt;
+    &lt;div&gt;
+        &lt;p&gt;this example&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;p&gt;Thanks css-tricks.com&lt;/p&gt;
+&lt;/div&gt;</pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <pre><code>
+#first-section p ~ p {
+    background-color: #DDDDDD;
+    color: #222222;
+}
+
+#second-section div ~ p {
+    background-color: orange;
+    color: blue;
+}
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <div class="code-lines">
+<pre>&lt;div id="first-section"&gt;
+    &lt;p&gt;I totally&lt;/p&gt;</pre>
+                        </div>
+                        <div class="code-lines highlighted">
+<pre>    &lt;p&gt;Stole&lt;/p&gt;</pre>
+                        </div>
+                        <div class="code-lines">
+<pre>    &lt;div&gt;
+        &lt;p&gt;this example.&lt;/p&gt;
+    &lt;/div&gt;</pre>
+                        </div>
+                        <div class="code-lines highlighted">
+<pre>    &lt;p&gt;Thanks css-tricks.com&lt;/p&gt;</pre>
+                        </div>
+                        <div class="code-lines">
+<pre>&lt;/div&gt;
+
+&lt;div id="second-section"&gt;
+    &lt;p&gt;I totally&lt;/p&gt;
+    &lt;p&gt;Stole&lt;/p&gt;
+    &lt;div&gt;
+        &lt;p&gt;this example&lt;/p&gt;
+    &lt;/div&gt;</pre>
+                        </div>
+                        <div class="code-lines highlighted">
+<pre>    &lt;p&gt;Thanks css-tricks.com&lt;/p&gt;</pre>
+                        </div>
+                        <div class="code-lines">
+<pre>&lt;/div&gt;</pre>
+                        </div>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Direct Sibling Selector</h2>
+                        <p>Select direct siblings of X that are Y </p>
+                        <p>Syntax: X + Y</p>
+                    </section>
+                    <section>
+                        <div class="code-lines">
+<pre>&lt;p class="big-brother"&gt;Today is&lt;/p&gt;
+&lt;p&gt;A Monday&lt;/p&gt;
+&lt;p class="big-brother"&gt;Right?&lt;/p&gt;
+&lt;span&gt;Too bad.&lt;/span&gt;
+&lt;p&gt;Jibberish&lt;/p&gt;</pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <pre><code>
+.big-brother + p {
+    background-color: #DDDDDD;
+    color: #222222;
+}
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <div class="code-lines">
+<pre>&lt;p class="big-brother"&gt;Today is&lt;/p&gt;</pre>
+                        </div>
+                        <div class="code-lines highlighted">
+<pre>&lt;p&gt;A Monday&lt;/p&gt;</pre>
+                        </div>
+                        <div class="code-lines">
+<pre>&lt;p class="big-brother"&gt;Right?&lt;/p&gt;
+&lt;span&gt;Too bad.&lt;/span&gt;
+&lt;p&gt;Jibberish&lt;/p&gt;</pre>
+                        </div>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Attributes selector</h2>
+                        <p>Select element type X that have attribute Y</p>
+                        <p>Syntax: X[Y]</p>
+                    </section>
+
+                    <section>
+                    <h3>Attribute existence</h3>
+                    <p>X[Y]</p>
+                        <pre><code>
+a[title] {
+    /* css rules */
+}
+
+<a href="www.example.com" title="Whatever">Example DotCom Link</a>
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h3>Attribute exact match</h3>
+                        <p>X[Y="exact value"]</p>
+                        <pre><code>
+a[href="www.craigbryan.me"] {
+    /* css rules */
+}
+
+<a href="www.craigbryan.me">My Website</a>
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h3>Attribute 'contains' match</h3>
+                        <p>X[Y*="contains this"]</p>
+                        <pre><code>
+a[href*="uottawa"] {
+    /* css rules */
+}
+
+<a href="www.uottawa-sesa.ca">SESA Website</a>
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h3>Attribute 'starts with' match</h3>
+                        <p>X[Y^="starts with this"]</p>
+                        <pre><code>
+a[href^="github"] {
+    /* css rules */
+}
+
+<a href="github.com/CraigBryan">My GitHub Profile</a>
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h3>Attribute 'ends with' match</h3>
+                        <p>X[Y$="ends with this"]</p>
+                        <pre><code>
+a[href$=".gif"] {
+    /* css rules */
+}
+
+<a href="http://i.imgur.com/51oBhlo.gif">Gif link!</a>
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Want more CSS selectors?</h2>
+                    </section>
+
+                    <section>
+                        <h2>Too bad</h2>
+                    </section>
+
+                    <section>
+                        <h2>I'm fresh out</h2>
+                    </section>
+
+                    <section>
+                        <h2>But there's lots more to learn</h2>
+                        <p>Check out:</p>
+                        <ul>
+                            <li>CSS specificity</li>
+                            <li>Pseudo classes</li>
+                            <li>Pseudo elements</li>
+                            <li>Media queries</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <p>Presentation code at</p>
+                    <p>
+                        <small>
+                        https://github.com/CraigBryan/css-selector-presentation
+                        </small>
+                    </p>
+                    <br>
+                    <p>Craig Bryan</p>
+                    <p>www.uottawa-sesa.ca</p>
+                </section>
 			</div>
 		</div>
 

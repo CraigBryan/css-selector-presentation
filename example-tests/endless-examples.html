@@ -102,5 +102,59 @@
             </ul>
         </div>
     </div>
+
+    <h1>direct descendent selector</h1>
+    <div id="direct-decendant-example">
+        <div class="outer-parent">
+            <div>
+                <p>This will not be selected</p>
+                <p>Nor will this!</p>
+            </div>
+        </div>
+
+        <div class="outer-parent">
+            <p>This will be selected!</p>
+            <p>And this! Wow.</p>
+        </div>
+    </div>
+
+    <h1>sibling selector</h1>
+    <div id="sibling-example">
+        <div id="first-section">
+            <p>I totally</p>
+            <p>Stole</p>
+            <div>
+                <p>this example.</p>
+            </div>
+            <p>Thanks css-tricks.com</p>
+        </div>
+
+        <div id="second-section">
+            <p>I totally</p>
+            <p>Stole</p>
+            <div>
+                <p>this example</p>
+            </div>
+            <p>Thanks css-tricks.com</p>
+        </div>
+    </div>
+
+    <h1>direct sibling selector</h1>
+    <div id="direct-sibling-example">
+        <p class="big-brother">Today is</p>
+        <p>A Monday</p>
+        <p class="big-brother">Right?</p>
+        <span>Too bad.</span>
+        <p>Jibberish</p>
+    </div>
+
+    <h1>attributes selector</h1>
+    <div id="attributes-examples">
+        <a href="www.example.com" title="Whatever">Example DotCom Link</a>
+        <a href="www.craigbryan.me">My Website</a>
+        <a href="www.uottawa-sesa.ca">SESA Website</a>
+        <a href="github.com/CraigBryan">My GitHub Profile</a>
+        <a href="http://i.imgur.com/51oBhlo.gif">Gif link!</a>
+    </div>
 </body>
 </html>

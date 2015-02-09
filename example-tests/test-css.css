@@ -38,6 +38,51 @@
     color: blue;
 }
 
+#direct-decendant-example .outer-parent > p {
+    background-color: black;
+    color: white;
+} 
+
+#sibling-example #first-section p ~ p {
+    background-color: black;
+    color: white;
+}
+
+#sibling-example #second-section div ~ p {
+    background-color: orange;
+    color: blue;
+}
+
+#direct-sibling-example .big-brother + p {
+    background-color: black;
+    color: white;
+}
+
+#attributes-examples a[title] {
+    background-color: black;
+    color: white;
+}
+
+#attributes-examples a[href="www.craigbryan.me"] {
+    background-color: orange;
+    color: blue;
+}
+
+#attributes-examples a[href*="uottawa"] {
+    background-color: black;
+    color: white;
+}
+
+#attributes-examples a[href^="github"] {
+    background-color: orange;
+    color: blue;
+}
+
+#attributes-examples a[href$=".gif"] {
+    background-color: black;
+    color: white;
+}
+
 p {
     background-color: inherit;
 }
